@@ -115,9 +115,10 @@ class Atomic:
             pass
 
         if not self.name:
-            self.name = self.image.split("/")[-1].split(":")[0]
-            if self.spc:
-                self.name = self.name + "-spc"
+			if self.name is not None:
+				self.name = self.image.split("/")[-1].split(":")[0]
+			if self.spc:
+				self.name = self.name + "-spc"
 
     def run(self):
         try:
